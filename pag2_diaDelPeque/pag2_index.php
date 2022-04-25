@@ -1,31 +1,30 @@
 <!doctype html>
 <html>
-<head>    
-<title>Register</title>    
+<head>
+<title>Register</title>
     <style>
-        body{
-    margin-top: 110px;
-    margin-bottom: 110px;
-    margin-right: 160px;
-    margin-left: 90px;
-    background-color: lightcyan;
-    color: palevioletred;
-    font-family: verdana;
-    font-size: 100%
-
-        }
-            h1 {
-    color: darkred;
-    font-family: indigo;
-    font-size: 100%;
-}
-         h2 {
-    color: darkred;
-    font-family: indigo;
-    font-size: 100%;
-}</style>    
-</head>
-<body>
+      body {
+        margin-top: 110px;
+        margin-bottom: 110px;
+        margin-right: 160px;
+        margin-left: 90px;
+        background-color: lightcyan;
+        color: palevioletred;
+        font-family: verdana;
+        font-size: 100%
+      }
+      h1 {
+        color: darkred;
+        font-family: indigo;
+        font-size: 100%;
+      }
+      h2 {
+        color: darkred;
+        font-family: indigo;
+        font-size: 100%;
+      }
+    </style>
+</head><body>
 
     <center><h1>REGISTRATION FOR CHILDREN'S DAY EVENT</h1></center>
 <br>
@@ -88,13 +87,13 @@ Restricciones alimenticias:
 <br>
 <br>
 <center>
-<input type="submit" value="Register" name="submit" /> 
+<input type="submit" value="Register" name="submit"/>
 </center>
 
 
         </fieldset>
         </legend>
-</form> 
+</form>
 <?php
 if(isset($_POST["submit"])){
   if(!empty($_POST['nombre']) && !empty($_POST['apellidos']) && !empty($_POST['semestre']) && !empty($_POST['carrera']) && !empty($_POST['campus']) && !empty($_POST['alimento'])) {
@@ -129,5 +128,5 @@ if(isset($_POST["submit"])){
   }
 }
 ?>
-</body> 
+</body>
 </html>
