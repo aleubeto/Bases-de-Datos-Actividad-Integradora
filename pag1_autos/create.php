@@ -80,7 +80,7 @@
 		                        <option value="">Selecciona una marca</option>
 		                        <?php
 							   		$pdo = Database::connect();
-							   		$query = 'SELECT * FROM marca';
+							   		$query = 'SELECT * FROM pag1_marca';
 			 				   		foreach ($pdo->query($query) as $row) {
 		                        		if ($row['idmarca']==$marc)
 		                        			echo "<option selected value='" . $row['idmarca'] . "'>" . $row['nombrem'] . "</option>";
