@@ -40,17 +40,17 @@
 		if ($valid) {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE auto  set idauto = ?, nombrec = ?, idmarca =?, ac= ? WHERE idauto = ?";
+			$sql = "UPDATE pag1_auto  set idauto = ?, nombrec = ?, idmarca =?, ac= ? WHERE idauto = ?";
 			$q = $pdo->prepare($sql);
 			$acq = ($ac=="S")?1:0;
 			$q->execute(array($f_id,$subm,$marc,$acq, $id));
 			Database::disconnect();
-			header("Location: index.php");
+			header("Location: pag1_index.php");
 		}
 	} else {
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "SELECT * FROM auto where idauto = ?";
+		$sql = "SELECT * FROM pag1_auto where idauto = ?";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($id));
 		$data = $q->fetch(PDO::FETCH_ASSOC);
@@ -109,7 +109,7 @@
                                     <option value="">Selecciona una marca</option>
                                         <?php
 					   						$pdo = Database::connect();
-					   						$query = 'SELECT * FROM marca';
+					   						$query = 'SELECT * FROM pag1_marca';
 	 				   						foreach ($pdo->query($query) as $row) {
 	 				   							if ($row['idmarca']==$marc)
                         	   						echo "<option selected value='" . $row['idmarca'] . "'>" . $row['nombrem'] . "</option>";
