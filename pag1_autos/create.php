@@ -38,7 +38,7 @@
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql = "INSERT INTO pag1_auto (idauto,nombrec,idmarca, ac) values(null, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
-			($ac=="S")?$acq=true:$acq=false;
+			($ac=="S")?$acq=1:$acq=0;
 			$q->execute(array($subm,$marc,$acq));
 			Database::disconnect();
 			header("Location: pag1_index.php");
