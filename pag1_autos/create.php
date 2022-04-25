@@ -41,7 +41,7 @@
 			($ac=="S")?$acq=true:$acq=false;
 			$q->execute(array($subm,$marc,$acq));
 			Database::disconnect();
-			header("Location: index.php");
+			header("Location: pag1_index.php");
 		}
 	}
 ?>
