@@ -1,9 +1,9 @@
 <?php
 	class Database {
-		private static $dbName 					= 'autos' ;
+		private static $dbName 					= '2005B_02' ;
 		private static $dbHost 					= 'localhost' ;
-		private static $dbUsername 			= 'autosUser';
-		private static $dbUserPassword 	= 'autosUserPass';
+		private static $dbUsername 			= 'u2005_02';
+		private static $dbUserPassword 	= 'VGn@iaul#ZR5';
 
 		private static $cont  = null;
 
