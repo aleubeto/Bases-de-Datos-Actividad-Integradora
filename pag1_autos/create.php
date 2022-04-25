@@ -36,7 +36,7 @@
 		if ($valid) {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "INSERT INTO auto (idauto,nombrec,idmarca, ac) values(null, ?, ?, ?)";
+			$sql = "INSERT INTO pag1_auto (idauto,nombrec,idmarca, ac) values(null, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
 			($ac=="S")?$acq=true:$acq=false;
 			$q->execute(array($subm,$marc,$acq));
