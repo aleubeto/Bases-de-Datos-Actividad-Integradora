@@ -4,9 +4,9 @@
         <!--Head de la página de inicio-->
     </head>
     <body>
-        <a href="php/autos/index.php">Autos</a>
-        <a href="php/pag2_diaDelNino.php">Día del peque</a>
-        <a href="php/pag4_transacciones.php">Transacciones</a>
+        <a href="php/pag1_autos/pag1_index.php">Autos</a>
+        <a href="php/pag2_diaDelPeque/pag2_index.php">Día del peque</a>
+        <a href="php/pag4_transacciones/pag4_index.php">Transacciones</a>
         <!--Body de la página de inicio-->
     </body>
 </html>
