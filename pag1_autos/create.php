@@ -109,7 +109,7 @@
 
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Agregar</button>
-						<a class="btn" href="index.php">Regresar</a>
+						<a class="btn" href="pag1_index.php">Regresar</a>
 					</div>
 
 				</form>
