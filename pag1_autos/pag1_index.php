@@ -30,7 +30,7 @@
 		              	<?php
 					   	include 'database.php';
 					   	$pdo = Database::connect();
-					   	$sql = 'SELECT * FROM auto natural join marca ORDER BY idauto';
+					   	$sql = 'SELECT * FROM pag1_auto natural join pag1_marca ORDER BY idauto';
 	 				   	foreach ($pdo->query($sql) as $row) {
 							echo '<tr>';
     					   	echo '<td>'. $row['nombrec'] . '</td>';
