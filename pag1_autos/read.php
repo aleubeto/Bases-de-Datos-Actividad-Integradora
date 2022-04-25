@@ -72,7 +72,7 @@
 					</div>
 
 				    <div class="form-actions">
-						<a class="btn" href="index.php">Regresar</a>
+						<a class="btn" href="pag1_index.php">Regresar</a>
 					</div>
 
 				</div>
