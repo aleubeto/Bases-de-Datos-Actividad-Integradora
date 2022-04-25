@@ -38,7 +38,7 @@
 		    		<input type="hidden" name="id" value="<?php echo $id;?>"/>
 					<p class="alert alert-error">Estas seguro que quieres eliminar este auto ?</p>
 					<div class="form-actions">
-						<button type="submit" class="btn btn-danger">Si</button>
+						<button type="submit" class="btn btn-danger" href="pag1_index.php">Si</button>
 						<a class="btn" href="pag1_index.php">No</a>
 					</div>
 				</form>
