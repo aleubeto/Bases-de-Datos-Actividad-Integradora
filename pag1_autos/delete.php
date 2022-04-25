@@ -15,7 +15,7 @@
 		$q = $pdo->prepare($sql);
 		$q->execute(array($id));
 		Database::disconnect();
-		header("Location: index.php");
+		header("Location: pag1_index.php");
 	}
 ?>
 
@@ -39,7 +39,7 @@
 					<p class="alert alert-error">Estas seguro que quieres eliminar este auto ?</p>
 					<div class="form-actions">
 						<button type="submit" class="btn btn-danger">Si</button>
-						<a class="btn" href="index.php">No</a>
+						<a class="btn" href="pag1_index.php">No</a>
 					</div>
 				</form>
 			</div>
