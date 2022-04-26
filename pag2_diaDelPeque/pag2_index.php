@@ -106,7 +106,7 @@ if(isset($_POST["submit"])){
 
 
     $con=mysqli_connect('localhost','u2005_02','VGn@iauI#ZR5', '2005B_02') or die(mysql_error());
-    $query=mysqli_query($con, "SELECT * FROM pag2_registro WHERE nombre='.$apellidos.'");
+    $query=mysqli_query($con, "SELECT * FROM pag2_registro WHERE nombre='.$nombre.' AND apellidos='.$apellidos'");
     echo "test 5";
     $numrows=mysqli_num_rows($query);
     echo "test 6";
