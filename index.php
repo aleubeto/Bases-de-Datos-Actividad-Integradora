@@ -11,11 +11,10 @@
     </head>
     <body>
         <ul>
-            <a href="pag1_autos/pag1_index.php">CRUD de autos</a>
+            <li><a href="pag1_autos/pag1_index.php">CRUD de autos</a></li>
             <li><a href="pag2_diaDelPeque/pag2_index.php">Día del peque</a></li>
             <li><a href="pag3_chatBot/pag3_index.php">ChatBot: Ikta'an</a></li>
             <li><a href="pag4_transacciones/pag4_index.php">Transacciones</a></li>
         </ul>
-        <!--Body de la página de inicio-->
     </body>
 </html>
