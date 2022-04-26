@@ -5,5 +5,8 @@
     </head>
     <body>
         <h1>Transacciones</h1>
+        <?php
+            #código php
+        ?>
     </body>
 </html>

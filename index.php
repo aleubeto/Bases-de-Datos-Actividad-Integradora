@@ -1,5 +1,10 @@
 <!doctype html>
 <html>
+    <style>
+    p {
+        background-image: url('images/toreto.jpeg');
+    }
+    </style>
     <head>
         <link rel="stilones" href="stilo.css">
     </head>
