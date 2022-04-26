@@ -2,9 +2,9 @@
 <html>
     <style>
     p {
-    background-image: url('toreto.jpeg');
+        background-image: url('images/toreto.jpeg');
     }
-    </style> 
+    </style>
     <head>
         <!--Head de la página de inicio-->
     </head>
