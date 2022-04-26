@@ -106,10 +106,12 @@ if(isset($_POST["submit"])){
 
 
     $con=mysqli_connect('localhost','u2005_02','VGn@iauI#ZR5', '2005B_02') or die(mysql_error());
-    echo "test 4";
-    $query=mysql_query($con, "SELECT * FROM pag2_registro WHERE nombre='".$apellidos."'");
-    $numrows=mysql_num_rows($query);
+    $query=mysqli_query($con, "SELECT * FROM pag2_registro WHERE nombre='.$apellidos.'");
+    echo "test 5";
+    $numrows=mysqli_num_rows($query);
+    echo "test 6";
     if($numrows==0) {
+      echo "test 7";
       $sql="INSERT INTO pag2_registro(nombre, apellidos, semestre, restriccion, idCarrera, idCampus) VALUES('$nombre','$apellidos', '$semestre', '$alimento', '$carrera', '$campus')";
       $result=mysqli_query($con, $sql);
       if($result){
