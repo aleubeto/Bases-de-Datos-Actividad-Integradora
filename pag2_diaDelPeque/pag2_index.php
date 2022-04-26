@@ -39,41 +39,41 @@ Apellidos: <input type="text" name="apellidos"><br />
 <br>
 Semestre:
 <select name = "semestre">
-  <option value="9">-</option>
-  <option value="1">1</option>}
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
+  <option value=9>-</option>
+  <option value=1>1</option>}
+  <option value=2>2</option>
+  <option value=3>3</option>
+  <option value=4>4</option>
+  <option value=5>5</option>
+  <option value=6>6</option>
+  <option value=7>7</option>
+  <option value=8>8</option>
 </select>
 <br>
 <br>
 Carrera:
 <select name = "carrera">
-  <option value="9">-</option>
-  <option value="1">ITC</option>}
-  <option value="2">IRS</option>
-  <option value="3">LAD</option>
-  <option value="4">IBT</option>
-  <option value="5">ARQ</option>
-  <option value="6">LRI</option>
-  <option value="7">IDM</option>
-  <option value="8">IC</option>
+  <option value=9>-</option>
+  <option value=1>ITC</option>}
+  <option value=2>IRS</option>
+  <option value=3>LAD</option>
+  <option value=4>IBT</option>
+  <option value=5>ARQ</option>
+  <option value=6>LRI</option>
+  <option value=7>IDM</option>
+  <option value=8>IC</option>
 </select>
 <br>
 <br>
 Campus:
 <select name = "campus">
-  <option value="8">-</option>
-  <option value="1">Tampico</option>
-  <option value="2">Queretaro</option>
-  <option value="3">Puebla</option>}
-  <option value="4">Cuernavaca</option>
-  <option value="5">Hidalgo</option>
-  <option value="6">Toluca</option>
+  <option value=8>-</option>
+  <option value=1>Tampico</option>
+  <option value=2>Queretaro</option>
+  <option value=3>Puebla</option>}
+  <option value=4>Cuernavaca</option>
+  <option value=5>Hidalgo</option>
+  <option value=6>Toluca</option>
 </select>
 <br>
 <br>
