@@ -107,10 +107,10 @@ if(isset($_POST["submit"])){
 
     $con=mysqli_connect('localhost','u2005_02','VGn@iauI#ZR5', '2005B_02') or die(mysql_error());
 
-    $query=mysql_query($con, "SELECT * FROM evt_registro WHERE nombre ='".$apellidos."'");
+    $query=mysql_query($con, "SELECT * FROM pag2_registro WHERE nombre ='".$apellidos."'");
     $numrows=mysql_num_rows($query);
     if($numrows==0) {
-      $sql="INSERT INTO evt_registro(nombre, apellidos, semestre, restriccion, idCarrera, idCampus) VALUES('$nombre','$apellidos', '$semestre', '$alimento', '$carrera', '$campus')";
+      $sql="INSERT INTO pag2_registro(nombre, apellidos, semestre, restriccion, idCarrera, idCampus) VALUES('$nombre','$apellidos', '$semestre', '$alimento', '$carrera', '$campus')";
       $result=mysqli_query($con, $sql);
       if($result){
         echo "Respuestas enviadas!";
