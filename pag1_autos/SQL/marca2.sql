@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `marca2`
 --
 
-CREATE TABLE IF NOT EXISTS `marca` (
+CREATE TABLE IF NOT EXISTS `pag1_marca` (
   `idmarca` int(11) NOT NULL,
   `nombrem` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`idmarca`)
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `marca` (
 -- Dumping data for table `marca2`
 --
 
-INSERT INTO `marca` (`idmarca`, `nombrem`) VALUES
+INSERT INTO `pag1_marca` (`idmarca`, `nombrem`) VALUES
 (1, 'Honda'),
 (2, 'Volkswagen'),
 (3, 'Ford'),

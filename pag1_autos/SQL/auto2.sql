@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `auto2`
 --
 
-CREATE TABLE IF NOT EXISTS `auto` (
+CREATE TABLE IF NOT EXISTS `pag1_auto` (
   `idauto` int(11) NOT NULL AUTO_INCREMENT,
   `nombrec` varchar(20) DEFAULT NULL,
   `idmarca` int(11) DEFAULT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `auto` (
 -- Dumping data for table `auto2`
 --
 
-INSERT INTO `auto` (`idauto`, `nombrec`, `idmarca`, `ac`) VALUES
+INSERT INTO `pag1_auto` (`idauto`, `nombrec`, `idmarca`, `ac`) VALUES
 (2, 'civic', 1, 1),
 (3, 'acord', 1, 0),
 (4, 'jetta', 2, 0),
@@ -54,8 +54,8 @@ INSERT INTO `auto` (`idauto`, `nombrec`, `idmarca`, `ac`) VALUES
 --
 -- Constraints for table `auto2`
 --
-ALTER TABLE `auto2`
-  ADD CONSTRAINT `auto2_ibfk_1` FOREIGN KEY (`idmarca`) REFERENCES `marca2` (`idmarca`);
+ALTER TABLE `pag1_auto`
+  ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`idmarca`) REFERENCES `pag1_marca` (`idmarca`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
