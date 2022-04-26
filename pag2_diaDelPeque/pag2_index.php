@@ -40,7 +40,7 @@ Apellidos: <input type="text" name="apellidos"><br />
 Semestre:
 <select name = "semestre">
   <option value=9>-</option>
-  <option value=1>1</option>}
+  <option value=1>1</option>
   <option value=2>2</option>
   <option value=3>3</option>
   <option value=4>4</option>
@@ -54,7 +54,7 @@ Semestre:
 Carrera:
 <select name = "carrera">
   <option value=9>-</option>
-  <option value=1>ITC</option>}
+  <option value=1>ITC</option>
   <option value=2>IRS</option>
   <option value=3>LAD</option>
   <option value=4>IBT</option>
@@ -70,7 +70,7 @@ Campus:
   <option value=8>-</option>
   <option value=1>Tampico</option>
   <option value=2>Queretaro</option>
-  <option value=3>Puebla</option>}
+  <option value=3>Puebla</option>
   <option value=4>Cuernavaca</option>
   <option value=5>Hidalgo</option>
   <option value=6>Toluca</option>
