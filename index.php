@@ -1,5 +1,10 @@
 <!doctype html>
 <html>
+    <style>
+    p {
+    background-image: url('toreto.jpeg');
+    }
+    </style> 
     <head>
         <!--Head de la página de inicio-->
     </head>
