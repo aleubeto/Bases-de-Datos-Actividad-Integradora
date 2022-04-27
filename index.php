@@ -5,12 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
-        <title>Inicio</title>
+        <title>Equipo 2: Database</title>
     </head>
     <body>
         <div class="contenedor">
             <div class="head">
-                <img src="images/Equipo 2.png">
+                <img src="images/Equipo 2.svg">
             </div>
             <div class="contenedor-botones">
                 <button class="boton_animado" onclick="location.href='pag1_autos/pag1_index.php'">
