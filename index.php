@@ -9,6 +9,9 @@
     </head>
     <body>
         <div class="contenedor">
+            <div class="head">
+                <img src="images/Equipo 2.png">
+            </div>
             <div class="contenedor-botones">
                 <button class="boton_animado" onclick="location.href='pag1_autos/pag1_index.php'">
                     <span>CRUD de autos</span>
