@@ -1,13 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ChatBot: Ikta'an</title>
+        <title>Ikta'an maximizado</title>
+        <!--Referencias de hoja de estilos-->
         <link rel="stylesheet" href="css/maximized.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
-        <h1>ChatBot: Ikta'an</h1>
-    </body>
+        <!--CHAT BAR BLOCK-->
+        <div class="sidebar" id="side-menu">
+            <div class="datos-contacto">
+                <h2>Contacto</h2>
+                <ul>
+                    <li>Teléfono</li>
+                    <li>Correo electrónico</li>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                </ul>
+            </div>
+        </div>
+        <div class="chat-bar-maximized">
+            <div class="maximized" id="maximized-top">
+                <button id="menu-button" type="button" class="collapsible-x">
+                    <i style="color: #efef; text-decoration:none;" class="fa fa-bars"></i>
+                </button>
+                Asistente virtual: Ikta'an
+            </div>
+            <div class="content" id="maximized-bottom">
+                <div class="full-chat-block">
+                    <!--Message Container-->
+                    <div class="outer-container">
+                        <div class="chat-container">
+                            <!--Messages-->
+                            <div id="chatbox">
+                                <h5 id="chat-timestamp"></h5>
+                                <p id="botStarterMessage" class="botText"><span>Cargando...</span></p>
+                            </div>
+                            <!--User input box-->
+                            <div class="chat-bar-input-block">
+                                <div id="userInput">
+                                    <input id="textInput" class="input-box" type="text" name="msg" placeholder="Escribe aquí un mensaje">
+                                    <p></p>
+                                </div>
+                                <div class="chat-bar-icons">
+                                    <i id="chat-icon" style="color: rgb(218, 68, 98);" class="fa fa-fw fa-heart" onclick="heartButton()"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--Referencia de scripts-->
+<script src="js/maximize.js"></script>
+<script src="js/responses.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>
