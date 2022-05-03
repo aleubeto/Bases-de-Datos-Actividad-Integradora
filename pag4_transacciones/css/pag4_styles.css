@@ -27,7 +27,7 @@ h2{
     min-height: 85vh;
     display: flex;
     align-items: center;
-    top: 50px;
+    top: 50%;
     justify-content: center;
     flex-direction: row;
     width: 100%;
