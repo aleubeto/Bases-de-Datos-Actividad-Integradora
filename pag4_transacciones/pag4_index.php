@@ -41,6 +41,7 @@
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				$monto,
+				$fecha,
 				$idRemitente,
 				$idDestinatario,
 			));
