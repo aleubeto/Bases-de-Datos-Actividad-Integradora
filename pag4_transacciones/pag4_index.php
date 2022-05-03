@@ -81,10 +81,10 @@
         <title>Transacciones</title>
     </head>
     <body>
+		<div class="row">
+			<h2>Transferencias entre usuarios</h2>
+		</div>
         <div class="container">
-            <div class="row">
-                <h2>Transferencias entre usuarios</h2>
-            </div>
             <div class="row">
                 <table class="table table-striped table-bordered">
                     <thead>
