@@ -12,6 +12,12 @@ body{
     min-height: 100vh;
 }
 
+.container{
+    display: inline-block;
+    width: auto;
+    margin: auto;
+}
+
 .row{
     padding: 10px;
 }
