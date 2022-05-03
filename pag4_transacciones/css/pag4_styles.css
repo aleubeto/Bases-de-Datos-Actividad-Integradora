@@ -23,7 +23,8 @@ h2{
 .container{
     min-height: 80vh;
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
+    top: 50px;
     justify-content: center;
     flex-direction: row;
     width: 100%;
