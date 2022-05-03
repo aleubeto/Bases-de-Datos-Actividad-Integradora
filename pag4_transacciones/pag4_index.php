@@ -85,7 +85,7 @@
 			<h2>Transferencias entre usuarios</h2>
 		</div>
         <div class="container">
-            <div class="row">
+            <div class="row" id="contenido">
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
@@ -108,7 +108,7 @@
                     </tbody>
                 </table>
             </div>
-			<div class="formulario">
+			<div class="formulario" id="contenido">
 				<form method="post">
 					<!--Remitente-->
 					<div class="control-group">
