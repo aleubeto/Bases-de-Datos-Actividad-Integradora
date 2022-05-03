@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="contenedor">
-            <div class="head">
+            <div>
                 <img src="images/Equipo 2.svg">
             </div>
             <div class="contenedor-botones">
