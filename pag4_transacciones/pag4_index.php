@@ -36,11 +36,10 @@
 			$pdo->beginTransaction();
 
 			//Query 1: Insertar la transacción en nuestra base de datos
-			$sql = "INSERT INTO pag4_transaccion(monto, fecha, idRemitente, idDestinatario) VALUES (?,?,?)";
+			$sql = "INSERT INTO pag4_transaccion(monto, fecha, idRemitente, idDestinatario) VALUES (?,NOW(),?,?)";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				$monto,
-				NOW(),
 				$idRemitente,
 				$idDestinatario,
 			));
