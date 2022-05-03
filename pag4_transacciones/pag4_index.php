@@ -1,3 +1,77 @@
+<?php
+
+	require_once 'database.php';
+	$monto = NULL;
+	$idRemitente = NULL;
+	$idDestinatario = NULL;
+	$montoError = NULL;
+	$idRemitenteError = NULL;
+	$idDestinatarioError = NULL;
+
+	if(!empty($_POST)){
+
+		$monto = $_POST["monto"];
+		$idRemitente = $_POST["idRemitente"];
+		$idDestinatario = $_POST["idDestinatario"];
+
+		if(empty($monto)) {
+			$montoError = "Por favor ingrese un monto";
+		}
+
+		if(empty($idRemitente)) {
+			$idRemitenteError = "Por favor ingrese un remitente";
+		}
+
+		if(empty($idDestinatario)) {
+			$idDestinatarioError = "Por favor ingrese un destinatario";
+		}
+
+		$pdo = new PDO('mysql:host=localhost;dbname=2005B_02', 'u2005_02', 'VGn@iauI#ZR5', array(
+			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_EMULATE_PREPARES => false
+		));
+
+		try{
+			//Iniciamos nuestra transacción
+			$pdo->beginTransaction();
+
+			//Query 1: Insertar la transacción en nuestra base de datos
+			$sql = "INSERT INTO pag4_transferencia(monto, idRemitente, idDestinatario) VALUES (?,?,?)";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(
+				$monto,
+				$idRemitente,
+				$idDestinatario,
+			));
+
+			//Query 2:
+			$sql = "UPDATE pag4_usuario SET saldo + ? WHERE id = ?";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(
+				$monto,
+				$idDestinatario
+			));
+			$sql = "UPDATE pag4_usuario SET saldo - ? WHERE id = ?";
+			$stmt = $pdo->prepare($sql);
+			$stmt->execute(array(
+				$monto,
+				$idRemitente
+			));
+
+			//Validación de la transacción
+			$pdo->commit();
+			header("Location: pag4_index.php");
+
+		}
+		//catch block
+		catch(Exception $e){
+			echo $e->getMessage();
+			$pdo->rollBack();
+		}
+	}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -22,6 +96,16 @@
                     </thead>
                     <tbody>
                         <?php
+							$pdo = Database::connect();
+							$sql = 'SELECT * FROM pag4_usuario;';
+							foreach($pdo->query($sql) as $row){
+								echo '<tr>';
+								echo '<tr>'. $row['idUsuario'] . '</td>';
+								echo '<tr>'. $row['nombre'] . '</td>';
+								echo '<tr>'. $row['saldo'] . '</td>';
+								echo '</tr>';
+							}
+							Database::disconnect();
                         ?>
                     </tbody>
                 </table>
@@ -34,11 +118,19 @@
 						<select name="idRemitente">
 							<option value="">Selecciona un Remitente</option>
 							<?php
-
+								$pdo = Database::connect();
+								$query = 'SELECT * FROM pag4_usuario';
+								foreach($pdo->query($query) as $row){
+									if ($row['idUsuario']==$idRemitente)
+										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+									else
+										echo "<option value='" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+								}
+								Database::disconnect();
 							?>
 						</select>
-						<?php  ?>
-						<span class="help-inline"><?php  ?></span>
+						<?php if (($idRemitenteError) != null) ?>
+						<span class="help-inline"><?php echo $idRemitenteError;?></span>
 					</div>
 				</div>
 
@@ -49,10 +141,19 @@
 						<select name="idRemitente">
 							<option value="">Selecciona un Destinatario</option>
 							<?php
+								$pdo = Database::connect();
+								$query = 'SELECT * FROM pag4_usuario';
+								foreach($pdo->query($query) as $row){
+									if ($row['idUsuario']==$idDestinatario)
+										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+									else
+										echo "<option value='" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+								}
+								Database::disconnect();
 							?>
 						</select>
-						<?php   ?>
-						<span class="help-inline"><?php  ?></span>
+						<?php if (($idDestinatario) != null) ?>
+						<span class="help-inline"><?php echo $idDestinatarioError;?></span>
 					</div>
 				</div>
 
@@ -60,10 +161,10 @@
 				<div class="control-group" <?php  ?>>
 					<label class="control-label">Monto</label>
 					<div class="controls">
-						<input name="monto" type="number" step="0.5" value="<?php   ?>">
-						<?php  ?>
+						<input name="monto" type="number" step="0.5" value="<?php echo !empty($monto)?$monto:'';?>">
+						<?php if (($montoError != null)) ?>
 						<span class="help-inline">
-							<?php   ?>
+							<?php echo $montoError;?>
 						</span>
 					</div>
 				</div>
