@@ -37,11 +37,10 @@
 			$pdo->beginTransaction();
 
 			//Query 1: Insertar la transacción en nuestra base de datos
-			$sql = "INSERT INTO pag4_transaccion(monto, fecha, idRemitente, idDestinatario) VALUES (?,NOW(),?,?)";
+			$sql = "INSERT INTO pag4_transaccion(monto, idRemitente, idDestinatario) VALUES (?,?,?)";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				$monto,
-				$fecha,
 				$idRemitente,
 				$idDestinatario,
 			));
@@ -118,7 +117,7 @@
 					<label class="control-label">Remitente</label>
 					<div class="controls">
 						<select name="idRemitente">
-							<option value="">Selecciona un Remitente</option>
+							<option value="">Remitente</option>
 							<?php
 								$pdo = Database::connect();
 								$query = 'SELECT * FROM pag4_usuario';
@@ -141,7 +140,7 @@
 					<label class="control-label">Destinatario</label>
 					<div class="controls">
 						<select name="idRemitente">
-							<option value="">Selecciona un Destinatario</option>
+							<option value="">Destinatario</option>
 							<?php
 								$pdo = Database::connect();
 								$query = 'SELECT * FROM pag4_usuario';
