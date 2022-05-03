@@ -110,7 +110,7 @@
                     </tbody>
                 </table>
             </div>
-			<form action="form-horizontal" method="post">
+			<form method="post">
 				<!--Remitente-->
 				<div class="control-group">
 					<label class="control-label">Remitente</label>
@@ -158,7 +158,7 @@
 				</div>
 
 				<!--Monto-->
-				<div class="control-group" <?php  ?>>
+				<div class="control-group" <?php echo !empty($montoError)?'error':'';?>">
 					<label class="control-label">Monto</label>
 					<div class="controls">
 						<input name="monto" type="number" step="0.5" value="<?php echo !empty($monto)?$monto:'';?>">
