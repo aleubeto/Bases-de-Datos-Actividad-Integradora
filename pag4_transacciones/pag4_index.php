@@ -41,7 +41,7 @@
 			$stmt->execute(array(
 				$monto,
 				$idRemitente,
-				$idDestinatario,
+				$idDestinatario
 			));
 
 			//Query 2:
