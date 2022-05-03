@@ -70,7 +70,6 @@
 		}
 	}
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +88,6 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>id</th>
                             <th>nombre</th>
                             <th>saldo</th>
                         </tr>
@@ -100,7 +98,6 @@
 							$sql = 'SELECT * FROM pag4_usuario;';
 							foreach($pdo->query($sql) as $row){
 								echo '<tr>';
-								echo '<td>'. $row['idUsuario'] . '</td>';
 								echo '<td>'. $row['usuario'] . '</td>';
 								echo '<td>'. $row['saldo'] . '</td>';
 								echo '</tr>';
