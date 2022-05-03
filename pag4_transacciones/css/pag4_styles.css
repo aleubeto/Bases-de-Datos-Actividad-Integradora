@@ -16,7 +16,12 @@ h2{
     text-align: center;
 }
 
+.header{
+    min-height: 20vh;
+}
+
 .container{
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
