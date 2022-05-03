@@ -2,7 +2,6 @@
 
 	require_once 'database.php';
 	$monto = NULL;
-	$fecha = NULL;
 	$idRemitente = NULL;
 	$idDestinatario = NULL;
 	$montoError = NULL;
@@ -37,11 +36,10 @@
 			$pdo->beginTransaction();
 
 			//Query 1: Insertar la transacción en nuestra base de datos
-			$sql = "INSERT INTO pag4_transaccion(monto, fecha, idRemitente, idDestinatario) VALUES (?,NOW(),?,?)";
+			$sql = "INSERT INTO pag4_transaccion(monto, idRemitente, idDestinatario) VALUES (?,?,?)";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				$monto,
-				$fecha,
 				$idRemitente,
 				$idDestinatario,
 			));
