@@ -47,13 +47,13 @@
 			));
 
 			//Query 2:
-			$sql = "UPDATE pag4_usuario SET saldo + ? WHERE idUsuario = ?";
+			$sql = "UPDATE pag4_usuario SET saldo = saldo + ? WHERE idUsuario = ?";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				$monto,
 				$idDestinatario
 			));
-			$sql = "UPDATE pag4_usuario SET saldo - ? WHERE idUsuario = ?";
+			$sql = "UPDATE pag4_usuario SET saldo = saldo - ? WHERE idUsuario = ?";
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				$monto,
