@@ -2,6 +2,7 @@
 
 	require_once 'database.php';
 	$monto = NULL;
+	$fecha = NULL;
 	$idRemitente = NULL;
 	$idDestinatario = NULL;
 	$montoError = NULL;
@@ -40,6 +41,7 @@
 			$stmt = $pdo->prepare($sql);
 			$stmt->execute(array(
 				$monto,
+				$fecha,
 				$idRemitente,
 				$idDestinatario,
 			));
