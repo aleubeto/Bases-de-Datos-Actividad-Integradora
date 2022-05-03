@@ -4,8 +4,14 @@
     margin:  0;
 	padding: 0;
     box-sizing: border-box;
+    border: 1px solid #000;
 }
 
 body{
     font-family: 'Inconsolata', monospace;
+    min-height: 100vh;
+}
+
+.row{
+    padding: 10px;
 }
