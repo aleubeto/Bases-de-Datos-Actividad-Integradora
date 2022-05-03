@@ -135,7 +135,7 @@
 				<div class="control-group">
 					<label class="control-label">Destinatario</label>
 					<div class="controls">
-						<select name="idRemitente">
+						<select name="idDestinatario">
 							<option value="">Destinatario</option>
 							<?php
 								$pdo = Database::connect();
