@@ -100,9 +100,9 @@
 							$sql = 'SELECT * FROM pag4_usuario;';
 							foreach($pdo->query($sql) as $row){
 								echo '<tr>';
-								echo '<tr>'. $row['idUsuario'] . '</td>';
-								echo '<tr>'. $row['nombre'] . '</td>';
-								echo '<tr>'. $row['saldo'] . '</td>';
+								echo '<td>'. $row['idUsuario'] . '</td>';
+								echo '<td>'. $row['usuario'] . '</td>';
+								echo '<td>'. $row['saldo'] . '</td>';
 								echo '</tr>';
 							}
 							Database::disconnect();
@@ -122,9 +122,9 @@
 								$query = 'SELECT * FROM pag4_usuario';
 								foreach($pdo->query($query) as $row){
 									if ($row['idUsuario']==$idRemitente)
-										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
 									else
-										echo "<option value='" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+										echo "<option value='" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
 								}
 								Database::disconnect();
 							?>
@@ -145,9 +145,9 @@
 								$query = 'SELECT * FROM pag4_usuario';
 								foreach($pdo->query($query) as $row){
 									if ($row['idUsuario']==$idDestinatario)
-										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
 									else
-										echo "<option value='" . $row['idUsuario'] . "'>" . $row['nombre'] . "</option>";
+										echo "<option value='" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
 								}
 								Database::disconnect();
 							?>
