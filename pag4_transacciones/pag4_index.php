@@ -81,7 +81,7 @@
         <title>Transacciones</title>
     </head>
     <body>
-		<div class="row">
+		<div class="header">
 			<h2>Transferencias entre usuarios</h2>
 		</div>
         <div class="container">
