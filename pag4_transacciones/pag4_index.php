@@ -108,70 +108,72 @@
                     </tbody>
                 </table>
             </div>
-			<form method="post">
-				<!--Remitente-->
-				<div class="control-group">
-					<label class="control-label">Remitente</label>
-					<div class="controls">
-						<select name="idRemitente">
-							<option value="">Remitente</option>
-							<?php
-								$pdo = Database::connect();
-								$query = 'SELECT * FROM pag4_usuario';
-								foreach($pdo->query($query) as $row){
-									if ($row['idUsuario']==$idRemitente)
-										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
-									else
-										echo "<option value='" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
-								}
-								Database::disconnect();
-							?>
-						</select>
-						<?php if (($idRemitenteError) != null) ?>
-						<span class="help-inline"><?php echo $idRemitenteError;?></span>
+			<div class="formulario">
+				<form method="post">
+					<!--Remitente-->
+					<div class="control-group">
+						<label class="control-label">Remitente</label>
+						<div class="controls">
+							<select name="idRemitente">
+								<option value="">Remitente</option>
+								<?php
+									$pdo = Database::connect();
+									$query = 'SELECT * FROM pag4_usuario';
+									foreach($pdo->query($query) as $row){
+										if ($row['idUsuario']==$idRemitente)
+											echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
+										else
+											echo "<option value='" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
+									}
+									Database::disconnect();
+								?>
+							</select>
+							<?php if (($idRemitenteError) != null) ?>
+							<span class="help-inline"><?php echo $idRemitenteError;?></span>
+						</div>
 					</div>
-				</div>
-
-				<!--Destinatario-->
-				<div class="control-group">
-					<label class="control-label">Destinatario</label>
-					<div class="controls">
-						<select name="idDestinatario">
-							<option value="">Destinatario</option>
-							<?php
-								$pdo = Database::connect();
-								$query = 'SELECT * FROM pag4_usuario';
-								foreach($pdo->query($query) as $row){
-									if ($row['idUsuario']==$idDestinatario)
-										echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
-									else
-										echo "<option value='" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
-								}
-								Database::disconnect();
-							?>
-						</select>
-						<?php if (($idDestinatario) != null) ?>
-						<span class="help-inline"><?php echo $idDestinatarioError;?></span>
+	
+					<!--Destinatario-->
+					<div class="control-group">
+						<label class="control-label">Destinatario</label>
+						<div class="controls">
+							<select name="idDestinatario">
+								<option value="">Destinatario</option>
+								<?php
+									$pdo = Database::connect();
+									$query = 'SELECT * FROM pag4_usuario';
+									foreach($pdo->query($query) as $row){
+										if ($row['idUsuario']==$idDestinatario)
+											echo "<option selected value'" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
+										else
+											echo "<option value='" . $row['idUsuario'] . "'>" . $row['usuario'] . "</option>";
+									}
+									Database::disconnect();
+								?>
+							</select>
+							<?php if (($idDestinatario) != null) ?>
+							<span class="help-inline"><?php echo $idDestinatarioError;?></span>
+						</div>
 					</div>
-				</div>
-
-				<!--Monto-->
-				<div class="control-group" <?php echo !empty($montoError)?'error':'';?>">
-					<label class="control-label">Monto</label>
-					<div class="controls">
-						<input name="monto" type="number" step="0.5" value="<?php echo !empty($monto)?$monto:'';?>">
-						<?php if (($montoError != null)) ?>
-						<span class="help-inline">
-							<?php echo $montoError;?>
-						</span>
+	
+					<!--Monto-->
+					<div class="control-group" <?php echo !empty($montoError)?'error':'';?>">
+						<label class="control-label">Monto</label>
+						<div class="controls">
+							<input name="monto" type="number" step="0.5" value="<?php echo !empty($monto)?$monto:'';?>">
+							<?php if (($montoError != null)) ?>
+							<span class="help-inline">
+								<?php echo $montoError;?>
+							</span>
+						</div>
 					</div>
-				</div>
-
-				<!--Envíar formulario-->
-				<div class="form-actions">
-					<button type="submit" class="btn btn-success">Transferir</button>
-				</div>
-			</form>
+	
+					<!--Envíar formulario-->
+					<div class="form-actions">
+						<button type="submit" class="btn btn-success">Transferir</button>
+					</div>
+				</form>
+			</div>
         </div>
     </body>
 </html>
