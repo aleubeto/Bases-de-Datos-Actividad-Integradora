@@ -82,7 +82,7 @@
     </head>
     <body>
 		<div class="header">
-			<h2>Transferencias entre usuarios</h2>
+			<h2>Transferencias entre usuarios.</h2>
 		</div>
         <div class="container">
             <div class="row" id="contenido">
@@ -121,7 +121,7 @@
 						<label class="control-label">Remitente</label>
 						<div class="controls">
 							<select name="idRemitente">
-								<option value="">Remitente</option>
+								<option disabled selected>Ingrese un usuario</option>
 								<?php
 									$pdo = Database::connect();
 									$query = 'SELECT * FROM pag4_usuario';
@@ -144,7 +144,7 @@
 						<label class="control-label">Destinatario</label>
 						<div class="controls">
 							<select name="idDestinatario">
-								<option value="">Destinatario</option>
+								<option disabled selected>Ingrese un usuario</option>
 								<?php
 									$pdo = Database::connect();
 									$query = 'SELECT * FROM pag4_usuario';
@@ -161,19 +161,19 @@
 							<span class="help-inline"><?php echo $idDestinatarioError;?></span>
 						</div>
 					</div>
-	
+
 					<!--Monto-->
 					<div class="control-group" <?php echo !empty($montoError)?'error':'';?>">
 						<label class="control-label">Monto</label>
 						<div class="controls">
-							<input name="monto" type="number" step="0.5" value="<?php echo !empty($monto)?$monto:'';?>">
+							<input name="monto" type="number" placeholder="$ 0.00" step="0.5" value="<?php echo !empty($monto)?$monto:'';?>">
 							<?php if (($montoError != null)) ?>
 							<span class="help-inline">
 								<?php echo $montoError;?>
 							</span>
 						</div>
 					</div>
-	
+
 					<!--Envíar formulario-->
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Transferir</button>
