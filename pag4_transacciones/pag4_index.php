@@ -134,8 +134,8 @@
 									Database::disconnect();
 								?>
 							</select>
+							<span class="help-inline" id="help-inline-1"><?php echo $idRemitenteError;?></span>
 							<?php if (($idRemitenteError) != null) ?>
-							<span class="help-inline"><?php echo $idRemitenteError;?></span>
 						</div>
 					</div>
 	
@@ -158,7 +158,7 @@
 								?>
 							</select>
 							<?php if (($idDestinatario) != null) ?>
-							<span class="help-inline"><?php echo $idDestinatarioError;?></span>
+							<span class="help-inline" id="help-inline-2"><?php echo $idDestinatarioError;?></span>
 						</div>
 					</div>
 
@@ -168,7 +168,7 @@
 						<div class="controls">
 							<input name="monto" type="number" placeholder="$ 0.00" step="0.5" value="<?php echo !empty($monto)?$monto:'';?>">
 							<?php if (($montoError != null)) ?>
-							<span class="help-inline">
+							<span class="help-inline" id="help-inline-3">
 								<?php echo $montoError;?>
 							</span>
 						</div>
@@ -176,7 +176,7 @@
 
 					<!--Envíar formulario-->
 					<div class="form-actions">
-						<button type="submit" class="btn btn-success">Transferir</button>
+						<button type="submit">Transferir</button>
 					</div>
 				</form>
 			</div>

@@ -5,28 +5,29 @@
     margin:  0;
 	padding: 0;
     box-sizing: border-box;
-    /*border: 1px solid #f0f0f0;*/
 }
 
 body{
     font-family: 'Noto Sans', sans-serif;
     min-height: 100vh;
-    background: #0d0d1a;
+    background: #1e5174;
 }
 
 .header{
-    min-height: 15vh;
+    min-height: 12vh;
     display: flex;
+    align-items: center;
     justify-content: center;
     position: relative;
+    background: var(--dt-background-color-container);
+    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.2);
 }
 
 h2{
     position: absolute;
     text-align: center;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 300;
-    bottom: 0;
     color: var(--primary-color);
 }
 
@@ -44,7 +45,7 @@ h3{
     width: 60%;
     margin: auto;
     position: fixed;
-    top: 23%;
+    top: 22%;
     left: 20%;
 }
 
@@ -70,6 +71,8 @@ tbody tr:nth-child(even){
 
 #contenido{
     width: 40%;
+    box-shadow: 0px 16px 16px 8px rgba(0,0,0,0.2);
+    border-radius: 10px;
 }
 
 #central-content{
@@ -140,6 +143,27 @@ select:hover, input:hover{
     color: var(--dt-text-color-button);
     transition: all .3s ease;
     cursor: pointer;
+}
+
+.help-inline{
+    color: rgb(255, 100, 100);
+    font-size: 10px;
+    position: absolute;
+}
+
+#help-inline-1{
+    top: 23%;
+    left: 77%;
+}
+
+#help-inline-2{
+    top: 42%;
+    left: 77%;
+}
+
+#help-inline-3{
+    top: 60%;
+    left: 79%;
 }
 
 :root{
