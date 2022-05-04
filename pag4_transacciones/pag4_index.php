@@ -138,7 +138,7 @@
 							<?php if (($idRemitenteError) != null) ?>
 						</div>
 					</div>
-	
+
 					<!--Destinatario-->
 					<div class="control-group">
 						<label class="control-label">Destinatario</label>
