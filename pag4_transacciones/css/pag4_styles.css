@@ -55,6 +55,7 @@ th, td{
 
 th{
     border-bottom: solid 1px var(--dt-border-color);
+    background: var(--highlight-color);
     font-weight: bolder;
     text-align: left;
 }
@@ -81,7 +82,7 @@ tbody tr:nth-child(even){
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--highlight-color);
+    background: var(--dt-background-color-container);
 }
 
 .header-table{
@@ -93,6 +94,52 @@ tbody tr:nth-child(even){
 table, form{
     border-collapse: collapse;
     border-radius: 0px 0px 10px 10px;
+}
+
+form{
+    padding: 30px 40px 30px 40px;
+}
+
+label{
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+select, input{
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--dt-even-row-collor);
+    width: 100%;
+    color: #f0f0f0;
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 2%;
+    margin-bottom: 7%;
+    border: 1px solid var(--dt-status-offline-color);
+}
+
+select:hover, input:hover{
+    border: 1px solid var(--highlight-color);
+    transition:all .3s ease;
+    cursor: pointer;
+}
+
+.form-actions button{
+    font-family: 'Noto Sans', sans-serif;
+    background: var(--dt-background-color-container);
+    border: 2px solid var(--highlight-color);
+    font-size: 16px;
+    color: var(--highlight-color);
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 7%;
+    padding: 4%;
+}
+
+.form-actions button:hover{
+    background: var(--highlight-color);
+    color: var(--dt-text-color-button);
+    transition: all .3s ease;
+    cursor: pointer;
 }
 
 :root{
