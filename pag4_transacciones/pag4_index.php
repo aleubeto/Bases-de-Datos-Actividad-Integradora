@@ -86,7 +86,10 @@
 		</div>
         <div class="container">
             <div class="row" id="contenido">
-                <table class="table table-striped table-bordered">
+				<div class="header-table" id="tableH-F">
+					<h3>Base de datos de usuarios</h3>
+				</div>
+                <table class="table table-striped table-bordered" id="central-content">
                     <thead>
                         <tr>
                             <th>nombre</th>
@@ -109,7 +112,10 @@
                 </table>
             </div>
 			<div class="formulario" id="contenido">
-				<form method="post">
+				<div class="header-table" id="tableH-F">
+						<h3>Realiza una transacción</h3>
+				</div>
+				<form method="post" id="central-content">
 					<!--Remitente-->
 					<div class="control-group">
 						<label class="control-label">Remitente</label>
