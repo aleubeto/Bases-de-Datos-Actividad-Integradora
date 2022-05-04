@@ -99,7 +99,7 @@
                     <tbody>
                         <?php
 							$pdo = Database::connect();
-							$sql = 'SELECT * FROM pag4_usuario;';
+							$sql = 'SELECT * FROM pag4_usuario ORDER BY saldo DESC;';
 							foreach($pdo->query($sql) as $row){
 								echo '<tr>';
 								echo '<td>'. $row['usuario'] . '</td>';
