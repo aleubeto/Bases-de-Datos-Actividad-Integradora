@@ -42,8 +42,6 @@
                             echo '<td width=250>';
     					   	echo '<a class="btn" href="read.php?id='.$row['ID_pregunta'].'">Detalles</a>';
     					   	echo '&nbsp;';
-    					  	echo '<a class="btn btn-success" href="update.php?id='.$row['ID_pregunta'].'">Actualizar</a>';
-    					   	echo '&nbsp;';
     					   	echo '<a class="btn btn-danger" href="delete.php?id='.$row['ID_pregunta'].'">Eliminar</a>';
     					   	echo '</td>';
 						  	echo '</tr>';
