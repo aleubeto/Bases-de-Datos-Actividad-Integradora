@@ -64,49 +64,47 @@
 
 				<form class="form-horizontal" action="create.php" method="post">
 
+				<div class="control-group <?php echo !empty($marcError)?'error':'';?>">
+					<label class="control-label">Categoria</label>
+					<div class="controls">
+						<select name ="marc">
+							<option value="">Selecciona una Categoria</option>
+							<?php
+								$pdo = Database::connect();
+								$query = 'SELECT * FROM pregunta';
+								foreach ($pdo->query($query) as $row) {
+									if ($row['ID_pregunta']==$marc)
+										echo "<option selected value='" . $row['ID_pregunta'] . "'>" . $row['nombrem'] . "</option>";
+									else
+										echo "<option value='" . $row['ID_pregunta'] . "'>" . $row['nombrem'] . "</option>";
+								}
+								Database::disconnect();
+							?>
+						</select>
+						<?php if (($marcError) != null) ?>
+							<span class="help-inline"><?php echo $marcError;?></span>
+					</div>
+				</div>
+
 				<div class="control-group <?php echo !empty($submError)?'error':'';?>">
-						<label class="control-label">Pregunta</label>
-					    <div class="controls">
-					      	<input name="subm" type="text"  placeholder="submarca" value="<?php echo !empty($subm)?$subm:'';?>">
-					      	<?php if (($submError != null)) ?>
-					      		<span class="help-inline"><?php echo $submError;?></span>
-					    </div>
+					<label class="control-label">Pregunta</label>
+					<div class="controls">
+						<input name="subm" type="text"  placeholder="Pregunta" value="<?php echo !empty($subm)?$subm:'';?>">
+						<?php if (($submError != null)) ?>
+							<span class="help-inline"><?php echo $submError;?></span>
 					</div>
+				</div>
 
-					<div class="control-group <?php echo !empty($marcError)?'error':'';?>">
-				    	<label class="control-label">Categoria</label>
-				    	<div class="controls">
-	                       	<select name ="marc">
-		                        <option value="">Selecciona una Categoria</option>
-		                        <?php
-							   		$pdo = Database::connect();
-							   		$query = 'SELECT * FROM pregunta';
-			 				   		foreach ($pdo->query($query) as $row) {
-		                        		if ($row['ID_pregunta']==$marc)
-		                        			echo "<option selected value='" . $row['ID_pregunta'] . "'>" . $row['nombrem'] . "</option>";
-		                        		else
-		                        			echo "<option value='" . $row['ID_pregunta'] . "'>" . $row['nombrem'] . "</option>";
-			   						}
-			   						Database::disconnect();
-			  					?>
-                            </select>
-					      	<?php if (($marcError) != null) ?>
-					      		<span class="help-inline"><?php echo $marcError;?></span>
-						</div>
+				<div class="control-group <?php echo !empty($submError2)?'error':'';?>">
+					<label class="control-label">Respuesta</label>
+					<div class="controls">
+						<input name="subm" type="text"  placeholder="Respuesta" value="<?php echo !empty($subm2)?$subm2:'';?>">
+						<?php if (($submError != null)) ?>
+							<span class="help-inline"><?php echo $submError2;?></span>
 					</div>
+				</div>
 
-					<div class="control-group <?php echo !empty($acError)?'error':'';?>">
-					    <label class="control-label">Aire Acondicionado ?</label>
-						    <div class="controls">
-	                    	    <input name="ac" type="radio" value="S"
-	                               	<?php $ac = null; echo ($ac == "S")?'checked':'';?> >Si</input> &nbsp;&nbsp;
-	                            <input name="ac" type="radio" value="N"
-	                              	<?php $ac=null; echo ($ac == "N")?'checked':'';?> >No</input>
-						       	<?php if (($acError != null)) ?>
-						      		<span class="help-inline"><?php echo $acError;?></span>
-						    </div>
-					</div>
-
+					
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Agregar</button>
 						<a class="btn" href="pag1_index.php">Regresar</a>

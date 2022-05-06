@@ -15,13 +15,14 @@
 		// keep track validation errors
 		$f_idError = null;
 		$submError = null;
+		$submError2 = null;
 		$marcError = null;
 
 		// keep track post values
 		$f_id = $_POST['f_id'];
 		$subm = $_POST['subm'];
+		$subm2 = $_POST['subm'];
 		$marc = $_POST['marc'];
-		$ac = $_POST['ac'];
 
 		/// validate input
 		$valid = true;
@@ -32,7 +33,7 @@
 		}
 
 		if (empty($marc)) {
-			$marcError = 'Porfavor escribe un id de marca';
+			$marcError = 'Porfavor ingrese una categoria';
 			$valid = false;
 		}
 
