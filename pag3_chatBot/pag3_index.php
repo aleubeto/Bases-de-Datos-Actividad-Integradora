@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <div class="dashboard-menu">
+        <h2><a href="dashboard/pag1_index.php">Dashboard CRUD</a></h2>
+    </div>
     <!-- CHAT BAR BLOCK -->
     <div class="chat-bar-collapsible">
         <button id="chat-button" type="button" class="collapsible">Asistente virtual Ikta'an
