@@ -83,8 +83,8 @@
 						</div>
 					</div>
 
-					<div class="control-group <?php echo !empty($pregError)?'error':'';?>">
-						<label class="control-label">Pregunta</label>
+					<div class="control-group <?php echo !empty($cayeError)?'error':'';?>">
+						<label class="control-label">Categoría</label>
 						<div class="controls">
 							<input name="cate" type="int"  placeholder="Categoria" value="<?php echo !empty($cate)?$cate:'';?>">
 							<?php if (($cateError != null)) ?>
