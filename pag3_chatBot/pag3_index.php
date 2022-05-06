@@ -24,12 +24,15 @@
                             <div id="chatbox">
                                 <h5 id="chat-timestamp"></h5>
                                 <p id="botStarterMessage" class="botText"><span>Cargando...</span></p>
+                                <?php
+                                    require_once 'database.php';
+                                    categorias();
+                                ?>
                             </div>
                             <!--User input box-->
                             <div class="chat-bar-input-block">
                                 <div id="userInput">
                                     <input id="textInput" class="input-box" type="text" name="msg" placeholder="Escribe aquí un mensaje">
-                                    <p></p>
                                 </div>
                                 <div class="chat-bar-icons">
                                     <i id="chat-icon" style="color: rgb(218, 68, 98);" class="fa fa-fw fa-heart" onclick="heartButton()"></i>
@@ -50,6 +53,17 @@
 </html>
 
 <?php
-    
+    function first_message(){
+        echo '<p class="botText"><span>Hola mundo.</span></p>';
+    }
+    function categorias(){
+        $pdo = Database::connect();
+        $sql = 'SELECT nombre FROM categoria;';
+        $msg = '<p class="botText"><span>';
+        foreach($pdo->query($sql) as $categoria){
+            $msg . $categoria['nombre'] . '<br>';
+        }
+        echo($msg . '</span></p>');
+        Database::disconnect();
+    }
 ?>
-
