@@ -23,13 +23,13 @@
                             <!--Messages-->
                             <div id="chatbox">
                                 <h5 id="chat-timestamp"></h5>
-                                <p id="botStarterMessage" class="botText"><span>Cargando...</span></p>
+                                <p id="botStarterMessage" class="botText"></p>
                                 <?php
                                     require_once 'database.php';
-                                    #for($i = 1; $i <= 10; $i++){
-                                    #    first_message();
-                                    #}
-                                    #categorias();
+                                    categorias();
+                                    for($i = 1; $i <= 3; $i++){
+                                        first_message();
+                                    }
                                 ?>
                             </div>
                         </div>
@@ -59,17 +59,23 @@
     function first_message(){
         echo '<div class="botText"><span>Hola mundo.</span></div>';
     }
+    if(isset($_POST['btn-act'])){
+        echo
+    }
     function categorias(){
         $pdo = Database::connect();
         $sql = 'SELECT nombre FROM categoria;';
         $msg = '<div class="botText"><span><div>¿Qué tipo de duda puedo resolverte hoy?</div>';
         foreach($pdo->query($sql) as $categoria){
-            $msg .= '<button type="button" role="button" class="ac-pushButton"';
+            $msg .= '<button type="button" role="button" name="btn-atc" class="ac-pushButton"';
             $msg .= 'value="' . $categoria['ID_Categoria'] . '"';
             $msg .= '<p>' . $categoria['nombre'];
             $msg .= '</button><br>';
         }
         echo($msg . '</span></div>');
         Database::disconnect();
+    }
+    function preguntas($cat){
+        echo('<div class="botText"><span>ID_Categoría: ' . $cat . '</span></div>');
     }
 ?>
