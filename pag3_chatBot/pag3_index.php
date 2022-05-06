@@ -26,18 +26,21 @@
                                 <p id="botStarterMessage" class="botText"><span>Cargando...</span></p>
                                 <?php
                                     require_once 'database.php';
-                                    categorias();
+                                    #for($i = 1; $i <= 10; $i++){
+                                    #    first_message();
+                                    #}
+                                    #categorias();
                                 ?>
                             </div>
-                            <!--User input box-->
-                            <div class="chat-bar-input-block">
-                                <div id="userInput">
-                                    <input id="textInput" class="input-box" type="text" name="msg" placeholder="Escribe aquí un mensaje">
-                                </div>
-                                <div class="chat-bar-icons">
-                                    <i id="chat-icon" style="color: rgb(218, 68, 98);" class="fa fa-fw fa-heart" onclick="heartButton()"></i>
-                                    <a id="chat-icon" style="color: #333; text-decoration: none;" class="fa fa-expand"  href='pag3_maximized.php' target="_blank"></a>
-                                </div>
+                        </div>
+                        <!--User input box-->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg" placeholder="Escribe aquí un mensaje">
+                            </div>
+                            <div class="chat-bar-icons">
+                                <i id="chat-icon" style="color: rgb(218, 68, 98);" class="fa fa-fw fa-heart" onclick="heartButton()"></i>
+                                <a id="chat-icon" style="color: #333; text-decoration: none;" class="fa fa-expand"  href='pag3_maximized.php' target="_blank"></a>
                             </div>
                         </div>
                     </div>
@@ -54,16 +57,19 @@
 
 <?php
     function first_message(){
-        echo '<p class="botText"><span>Hola mundo.</span></p>';
+        echo '<div class="botText"><span>Hola mundo.</span></div>';
     }
     function categorias(){
         $pdo = Database::connect();
         $sql = 'SELECT nombre FROM categoria;';
-        $msg = '<p class="botText"><span>';
+        $msg = '<div class="botText"><span><div>¿Qué tipo de duda puedo resolverte hoy?</div>';
         foreach($pdo->query($sql) as $categoria){
-            $msg . $categoria['nombre'] . '<br>';
+            $msg .= '<button type="button" role="button" class="ac-pushButton"';
+            $msg .= 'value="' . $categoria['ID_Categoria'] . '"';
+            $msg .= '<p>' . $categoria['nombre'];
+            $msg .= '</button><br>';
         }
-        echo($msg . '</span></p>');
+        echo($msg . '</span></div>');
         Database::disconnect();
     }
 ?>
