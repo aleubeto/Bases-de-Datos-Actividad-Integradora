@@ -20,11 +20,11 @@
 		$valid = true;
 
 		if (empty($subm)) {
-			$submError = 'Porfavor escribe una submarca';
+			$submError = 'Pregunta';
 			$valid = false;
 		}
 		if (empty($marc)) {
-			$marcError = 'Porfavor selecciona una marca';
+			$marcError = 'Respuesta';
 			$valid = false;
 		}
 		if (empty($ac)) {
@@ -59,13 +59,13 @@
 	    <div class="container">
 	    	<div class="span10 offset1">
 	    		<div class="row">
-		   			<h3>Agregar un auto nuevo</h3>
+		   			<h3>Agregar una Pregunta</h3>
 		   		</div>
 
 				<form class="form-horizontal" action="create.php" method="post">
 
-					<div class="control-group <?php echo !empty($submError)?'error':'';?>">
-						<label class="control-label">submarca</label>
+				<div class="control-group <?php echo !empty($submError)?'error':'';?>">
+						<label class="control-label">Pregunta</label>
 					    <div class="controls">
 					      	<input name="subm" type="text"  placeholder="submarca" value="<?php echo !empty($subm)?$subm:'';?>">
 					      	<?php if (($submError != null)) ?>
@@ -74,10 +74,10 @@
 					</div>
 
 					<div class="control-group <?php echo !empty($marcError)?'error':'';?>">
-				    	<label class="control-label">marca</label>
+				    	<label class="control-label">Categoria</label>
 				    	<div class="controls">
 	                       	<select name ="marc">
-		                        <option value="">Selecciona una marca</option>
+		                        <option value="">Selecciona una Categoria</option>
 		                        <?php
 							   		$pdo = Database::connect();
 							   		$query = 'SELECT * FROM pregunta';
