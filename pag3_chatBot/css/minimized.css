@@ -81,7 +81,8 @@ body{
 
 .chat-bar-icons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     width: 25%;
     float: right;

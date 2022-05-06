@@ -137,7 +137,7 @@ body{
 .userText{
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: normal;
     text-align: right;
     clear: both;
@@ -150,7 +150,7 @@ body{
     padding: 10px;
     border-radius: 8px;
     border-bottom-right-radius: 2px;
-    max-width: 80%;
+    max-width: 50%;
     margin-right: 10px;
     animation: floatup .5s forwards;
 }
@@ -159,7 +159,7 @@ body{
     color: #000;
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
 }
 
@@ -170,9 +170,13 @@ body{
     padding: 10px;
     border-radius: 8px;
     border-bottom-left-radius: 2px;
-    max-width: 80%;
+    max-width: 50%;
     margin-left: 10px;
     animation: floatup .5s forwards;
+}
+
+.botText button{
+    font-size: 15px;
 }
 
 @keyframes floatup{
