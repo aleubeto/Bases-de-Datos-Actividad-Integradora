@@ -63,45 +63,45 @@
 
 				<form class="form-horizontal" action="create.php" method="post">
 
-				<div class="control-group <?php echo !empty($cateError)?'error':'';?>">
-					<label class="control-label">Categoria</label>
-					<div class="controls">
-						<select name ="cate">
-							<option value="">Selecciona una Categoria</option>
-							<?php
-								$pdo = Database::connect();
-								$query = 'SELECT * FROM categoria';
-								foreach ($pdo->query($query) as $row) {
-									if ($row['ID_Categoria']==$cate)
-										echo "<option selected value='" . $row['ID_Categoria'] . "'>" . $row['nombre'] . "</option>";
-									else
-										echo "<option value='" . $row['ID_Categoria'] . "'>" . $row['nombre'] . "</option>";
-								}
-								Database::disconnect();
-							?>
-						</select>
-						<?php if (($cateError) != null) ?>
-							<span class="help-inline" id="help-inline"><?php echo $cateError;?></span>
+					<div class="control-group <?php echo !empty($cateError)?'error':'';?>">
+						<label class="control-label">Categoria</label>
+						<div class="controls">
+							<select name ="cate">
+								<option value="">Selecciona una Categoria</option>
+								<?php
+									$pdo = Database::connect();
+									$query = 'SELECT * FROM categoria';
+									foreach ($pdo->query($query) as $row) {
+										if ($row['ID_Categoria']==$cate)
+											echo "<option selected value='" . $row['ID_Categoria'] . "'>" . $row['nombre'] . "</option>";
+										else
+											echo "<option value='" . $row['ID_Categoria'] . "'>" . $row['nombre'] . "</option>";
+									}
+									Database::disconnect();
+								?>
+							</select>
+							<?php if (($cateError) != null) ?>
+								<span class="help-inline" id="help-inline"><?php echo $cateError;?></span>
+						</div>
 					</div>
-				</div>
 
-				<div class="control-group <?php echo !empty($pregError)?'error':'';?>">
-					<label class="control-label">Pregunta</label>
-					<div class="controls">
-						<input name="preg" type="text"  placeholder="Pregunta" value="<?php echo !empty($preg)?$preg:'';?>">
-						<?php if (($pregError != null)) ?>
-							<span class="help-inline"><?php echo $pregError;?></span>
+					<div class="control-group <?php echo !empty($pregError)?'error':'';?>">
+						<label class="control-label">Pregunta</label>
+						<div class="controls">
+							<input name="preg" type="text"  placeholder="Pregunta" value="<?php echo !empty($preg)?$preg:'';?>">
+							<?php if (($pregError != null)) ?>
+								<span class="help-inline"><?php echo $pregError;?></span>
+						</div>
 					</div>
-				</div>
 
-				<div class="control-group <?php echo !empty($respError)?'error':'';?>">
-					<label class="control-label">Respuesta</label>
-					<div class="controls">
-						<input name="resp" type="text"  placeholder="Respuesta" value="<?php echo !empty($resp)?$resp:'';?>">
-						<?php if (($respError != null)) ?>
-							<span class="help-inline"><?php echo $respError;?></span>
+					<div class="control-group <?php echo !empty($respError)?'error':'';?>">
+						<label class="control-label">Respuesta</label>
+						<div class="controls">
+							<input name="resp" type="text"  placeholder="Respuesta" value="<?php echo !empty($resp)?$resp:'';?>">
+							<?php if (($respError != null)) ?>
+								<span class="help-inline"><?php echo $respError;?></span>
+						</div>
 					</div>
-				</div>
 
 
 					<div class="form-actions">
