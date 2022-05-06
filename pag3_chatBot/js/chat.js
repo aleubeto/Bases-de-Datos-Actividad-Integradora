@@ -35,7 +35,7 @@ function getTime() {
 
 // Gets the first message
 function firstBotMessage() {
-    let firstMessage = "How's it going?"
+    let firstMessage = "Hola, soy Ikta'an, el asistente virtual de Naatik"
     document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
 
     let time = getTime();
@@ -94,7 +94,7 @@ function sendButton() {
 }
 
 function heartButton() {
-    buttonSendText("Heart clicked!")
+    buttonSendText("❤️")
 }
 
 // Press enter to send a message
