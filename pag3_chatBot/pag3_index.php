@@ -53,14 +53,16 @@
 <script src="js/minimized.js"></script>
 <script src="js/responses.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    function preguntas(catId){
+        $.post("preguntas.php", catID, preguntas(catID))
+    }
+</script>
 </html>
 
 <?php
     function first_message(){
         echo '<div class="botText"><span>Hola mundo.</span></div>';
-    }
-    if(isset($_POST['btn-act'])){
-        echo
     }
     function categorias(){
         $pdo = Database::connect();
@@ -68,14 +70,12 @@
         $msg = '<div class="botText"><span><div>¿Qué tipo de duda puedo resolverte hoy?</div>';
         foreach($pdo->query($sql) as $categoria){
             $msg .= '<button type="button" role="button" name="btn-atc" class="ac-pushButton"';
+            $msg .= 'onclick="preguntas(this.value)"';
             $msg .= 'value="' . $categoria['ID_Categoria'] . '"';
             $msg .= '<p>' . $categoria['nombre'];
             $msg .= '</button><br>';
         }
         echo($msg . '</span></div>');
         Database::disconnect();
-    }
-    function preguntas($cat){
-        echo('<div class="botText"><span>ID_Categoría: ' . $cat . '</span></div>');
     }
 ?>
