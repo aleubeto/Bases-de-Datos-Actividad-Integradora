@@ -3,32 +3,32 @@
 	require 'database.php';
 
 		$f_idError = null;
-		$submError = null;
-		$marcError = null;
-		$acError   = null;
+		$pregError = null;
+		$respError = null;
+		$cateError = null;
 
 
 	if ( !empty($_POST)) {
 
 		// keep track post values
 		$f_id = $_POST['f_id'];
-		$subm = $_POST['subm'];
-		$marc = $_POST['marc'];
-		$ac   = $_POST['ac'];
+		$preg = $_POST['preg'];
+		$resp = $_POST['resp'];
+		$cate = $_POST['cate'];
 
 		// validate input
 		$valid = true;
 
-		if (empty($subm)) {
-			$submError = 'Pregunta';
+		if (empty($preg)) {
+			$pregError = 'Pregunta';
 			$valid = false;
 		}
-		if (empty($marc)) {
-			$marcError = 'Respuesta';
+		if (empty($resp)) {
+			$respError = 'Respuesta';
 			$valid = false;
 		}
-		if (empty($ac)) {
-			$acError = 'Porfavor seleccione si el vehículo tiene aire acondicionado';
+		if (empty($cate)) {
+			$cateError = 'Porfavor seleccione la categoria';
 			$valid = false;
 		}
 
@@ -38,8 +38,7 @@
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql = "INSERT INTO pregunta (ID_pregunta, contenido, respuesta, ID_Categoria) values(null, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
-			($ac=="S")?$acq=1:$acq=0;
-			$q->execute(array($subm,$marc,$acq));
+			$q->execute(array($preg,$resp,$cate));
 			Database::disconnect();
 			header("Location: pag1_index.php");
 		}
@@ -64,47 +63,47 @@
 
 				<form class="form-horizontal" action="create.php" method="post">
 
-				<div class="control-group <?php echo !empty($marcError)?'error':'';?>">
+				<div class="control-group <?php echo !empty($cateError)?'error':'';?>">
 					<label class="control-label">Categoria</label>
 					<div class="controls">
-						<select name ="marc">
+						<select name ="cate">
 							<option value="">Selecciona una Categoria</option>
 							<?php
 								$pdo = Database::connect();
-								$query = 'SELECT * FROM pregunta';
+								$query = 'SELECT * FROM categoria';
 								foreach ($pdo->query($query) as $row) {
-									if ($row['ID_pregunta']==$marc)
-										echo "<option selected value='" . $row['ID_pregunta'] . "'>" . $row['nombrem'] . "</option>";
+									if ($row['ID_categoria']==$cate)
+										echo "<option selected value='" . $row['ID_categoria'] . "'>" . $row['nombre'] . "</option>";
 									else
-										echo "<option value='" . $row['ID_pregunta'] . "'>" . $row['nombrem'] . "</option>";
+										echo "<option value='" . $row['ID_categoria'] . "'>" . $row['nombre'] . "</option>";
 								}
 								Database::disconnect();
 							?>
 						</select>
-						<?php if (($marcError) != null) ?>
-							<span class="help-inline"><?php echo $marcError;?></span>
+						<?php if (($cateError) != null) ?>
+							<span class="help-inline" id="help-inline"><?php echo $cateError;?></span>
 					</div>
 				</div>
 
-				<div class="control-group <?php echo !empty($submError)?'error':'';?>">
+				<div class="control-group <?php echo !empty($pregError)?'error':'';?>">
 					<label class="control-label">Pregunta</label>
 					<div class="controls">
-						<input name="subm" type="text"  placeholder="Pregunta" value="<?php echo !empty($subm)?$subm:'';?>">
-						<?php if (($submError != null)) ?>
-							<span class="help-inline"><?php echo $submError;?></span>
+						<input name="preg" type="text"  placeholder="Pregunta" value="<?php echo !empty($preg)?$preg:'';?>">
+						<?php if (($pregError != null)) ?>
+							<span class="help-inline"><?php echo $pregError;?></span>
 					</div>
 				</div>
 
-				<div class="control-group <?php echo !empty($submError2)?'error':'';?>">
+				<div class="control-group <?php echo !empty($respError)?'error':'';?>">
 					<label class="control-label">Respuesta</label>
 					<div class="controls">
-						<input name="subm" type="text"  placeholder="Respuesta" value="<?php echo !empty($subm2)?$subm2:'';?>">
-						<?php if (($submError != null)) ?>
-							<span class="help-inline"><?php echo $submError2;?></span>
+						<input name="resp" type="text"  placeholder="Respuesta" value="<?php echo !empty($resp)?$resp:'';?>">
+						<?php if (($respError != null)) ?>
+							<span class="help-inline"><?php echo $respError;?></span>
 					</div>
 				</div>
 
-					
+
 					<div class="form-actions">
 						<button type="submit" class="btn btn-success">Agregar</button>
 						<a class="btn" href="pag1_index.php">Regresar</a>
