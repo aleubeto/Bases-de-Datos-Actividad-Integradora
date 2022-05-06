@@ -72,10 +72,10 @@
 								$pdo = Database::connect();
 								$query = 'SELECT * FROM categoria';
 								foreach ($pdo->query($query) as $row) {
-									if ($row['ID_categoria']==$cate)
-										echo "<option selected value='" . $row['ID_categoria'] . "'>" . $row['nombre'] . "</option>";
+									if ($row['ID_Categoria']==$cate)
+										echo "<option selected value='" . $row['ID_Categoria'] . "'>" . $row['nombre'] . "</option>";
 									else
-										echo "<option value='" . $row['ID_categoria'] . "'>" . $row['nombre'] . "</option>";
+										echo "<option value='" . $row['ID_Categoria'] . "'>" . $row['nombre'] . "</option>";
 								}
 								Database::disconnect();
 							?>
