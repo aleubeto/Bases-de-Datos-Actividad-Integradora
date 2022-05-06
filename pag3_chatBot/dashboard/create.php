@@ -38,7 +38,11 @@
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql = "INSERT INTO pregunta (ID_pregunta, contenido, respuesta, ID_Categoria) values(null, ?, ?, ?)";
 			$q = $pdo->prepare($sql);
+<<<<<<< HEAD
 			$q->execute(array($preg,$resp,$cate));
+=======
+			$q->execute(array($subm,$marc,$acq));
+>>>>>>> 95a1bf75fdf04e146fb10df3ec2d746e3869ff61
 			Database::disconnect();
 			header("Location: pag1_index.php");
 		}
